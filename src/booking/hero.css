@@ -1,0 +1,25 @@
+.bg-img-book {
+    position: relative;
+    background-image: url('../images/room.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%; /* Adjust as needed */
+}
+
+/* Add this pseudo-element to create the black overlay */
+.bg-img-book::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Black with 50% opacity */
+    z-index: 1; /* Ensures the overlay is above the background image */
+}
+
+/* Ensure the content inside .bg-img is above the overlay */
+.bg-img-book > * {
+    position: relative;
+    z-index: 2;
+}
