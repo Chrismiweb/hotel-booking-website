@@ -1,7 +1,9 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Hero from './Hero'
-import Hotels from './Hotels'
+// import Hotels from './Hotels'
+import Facility from './facility'
+import Suites from './Suites'
 
 function Home() {
   return (
@@ -9,7 +11,8 @@ function Home() {
     <div>
       <Navbar/>
       <Hero/>
-      <Hotels/>
+      <Facility/>
+      <Suites/>
     </div>
   )
 }

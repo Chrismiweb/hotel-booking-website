@@ -7,7 +7,7 @@ import HotelDetail from './HotelDetail';
 
 function Gallani() {
     const hotelData = {
-        hotelName: 'Safron Hotel',
+        hotelName: 'Gallani Hotel',
         hotelAddress: "57 Joel Ogunnaike Street, 101233 Lagos, Nigeria",
         img1: img1,
         img2: img2,
