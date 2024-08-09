@@ -8,6 +8,7 @@ import { MdFreeBreakfast } from "react-icons/md";
 import { MdRoomService } from "react-icons/md";
 import { PiTelevisionSimpleFill } from "react-icons/pi";
 import { FaLightbulb } from "react-icons/fa";
+// facility page
 
 function Facility() {
     const facilities = [
