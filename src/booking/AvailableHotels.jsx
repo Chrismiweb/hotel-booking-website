@@ -1,60 +1,10 @@
 import React, { useState } from 'react'
 import presken from '../images/Presken1.png'
+import hotelList  from './hotelList'
 
 function AvailableHotels() {
     const [search, setSearch] = useState('')
-    const hotelList = [
-        {
-            image: presken,
-            location: 'United state',
-            hotelName: "Presken Hotel",
-            price:"₦30,000 Per Night",
-            available: "Yes",
-            bookBtn: "Book Now",
-            link: '/presken'
-        },
-        {
-            image: presken,
-            location: 'england',
-            hotelName: "Presken Hotel",
-            price:"₦30,000 Per Night",
-            available: "Yes",
-            bookBtn: "Book Now"
-        },
-        {
-            image: presken,
-            location: 'canada',
-            hotelName: "Presken Hotel",
-            price:"₦30,000 Per Night",
-            available: "Yes",
-            bookBtn: "Book Now"
-        },
-        {
-            image: presken,
-            location: 'Ikeja, Lagos, Nigeria',
-            hotelName: "Presken Hotel",
-            price:"₦30,000 Per Night",
-            available: "Yes",
-            bookBtn: "Book Now"
-        },
-        {
-            image: presken,
-            location: 'Ikeja, Lagos, Nigeria',
-            hotelName: "Presken Hotel",
-            price:"₦30,000 Per Night",
-            available: "Yes",
-            bookBtn: "Book Now"
-        },
-        {
-            image: presken,
-            location: 'Ikeja, Lagos, Nigeria',
-            hotelName: "Presken Hotel",
-            price:"₦30,000 Per Night",
-            available: "Yes",
-            bookBtn: "Book Now"
-        }
-    ]
-
+    
    const filterSearch = hotelList.filter(hotel => 
     hotel.location.toLowerCase().includes(search.toLowerCase())
    )
@@ -89,7 +39,7 @@ function AvailableHotels() {
                         <p className='text-[13px] text-blue-700 font-semibold'>{h.price}</p>
                         <div className='w-[100%] flex justify-between items-center'>
                             <p className='underline text-blue-700 font-semibold text-[13px]'>{h.location}</p>
-                            <a href={h.link}>
+                            <a href={`${h.link}/${h.hotelName}`}>
                             <button className='bg-blue-700 py-[8px] text-white font-bold px-[20px]'>{h.bookBtn}</button>
 
                             </a>

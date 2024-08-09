@@ -6,11 +6,14 @@ function BookForm() {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [number, setnumber] = useState('')
+    const [hotelName, sethotelName] = useState('')
+
     const [checkIn, setCheckIn] = useState(null)
     const [checkOut, setCheckOut] = useState(null)
 
+
     async function BookingForm(e){
-        if(!name || !email || !number ){
+        if(!name || !email || !number || !hotelName ){
            return alert('Please Fill Form')
         }
         e.preventDefault()
@@ -22,7 +25,7 @@ function BookForm() {
                 headers: {
                     'content-type': 'Application/json'
                 },
-                body : JSON.stringify({name, email,  number, checkIn, checkOut})
+                body : JSON.stringify({name, email,  number, checkIn, checkOut, hotelName})
             })
             .then(res=>res.json())
             if(response){
@@ -39,7 +42,7 @@ function BookForm() {
 
 
   return (
-    <div className='w-[50%] bg-white shadow-2xl shadow-gray-400 '>
+    <div className='w-[50%] bg-white shadow-2xl mt-[50px] shadow-gray-400 '>
         <form action="" className='flex gap-3 flex-col justify-start items-start py-[40px] px-[40px]'>
             <h1 className='text-black font-bold text-[30px]'>Hotel Booking Form</h1>
             <div className='w-[100%] flex flex-col items-start gap-2'>
@@ -53,6 +56,10 @@ function BookForm() {
             <div className='w-[100%] flex flex-col items-start gap-2'>
                 <p>Phone Number</p>
                 <input onChange={(e)=>setnumber(e.target.value)} value={number} name='phoneNumber' className='w-[100%] border-x-gray-400 border-2 py-[5px] px-[20px]' type="text" placeholder='E.g +2348106794406' />
+            </div>
+            <div className='w-[100%] flex flex-col items-start gap-2'>
+                <p>Hotel Name</p>
+                <input onChange={(e)=>sethotelName(e.target.value)} value={hotelName} name='hotelName' className='w-[100%] border-x-gray-400 border-2 py-[5px] px-[20px]' type="text" placeholder='E.g Eko Hotel' />
             </div>
             <div className='w-[100%] flex justify-between items-start gap-2'>
                 <div className='w-[45%] flex flex-col items-start gap-2'>
