@@ -4,6 +4,8 @@ import Hero from './Hero'
 // import Hotels from './Hotels'
 import Facility from './facility'
 import Suites from './Suites'
+import TakeTour from './takeTour'
+
 
 function Home() {
   return (
@@ -13,6 +15,8 @@ function Home() {
       <Hero/>
       <Facility/>
       <Suites/>
+      <TakeTour/>
+      
     </div>
   )
 }
