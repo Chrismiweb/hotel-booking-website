@@ -9,6 +9,8 @@ function Navbar() {
         <a href='/'><p className='cursor-pointer font-bold text-[15px]'>Home</p></a>
         <a href="/booking"><p className='cursor-pointer font-bold text-[15px]'>Booking</p></a>
         <p className='cursor-pointer font-bold text-[15px]'>Contact</p>
+        <a href="/booking"><p className='cursor-pointer font-bold text-[15px]'>Dashboard</p></a>
+
       </div>
       <button className='bg-blue-800 py-[7px] border-2 border-blue-700 hover:bg-white hover:text-blue-700 rounded-[20px] px-[30px] text-white font-bold text-[15px]'>About</button>
     </div>

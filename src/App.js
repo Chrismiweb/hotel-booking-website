@@ -6,8 +6,10 @@ import Debras from './booking/Debras';
 import Gallani from './booking/gallani';
 import Presken from './booking/Presken';
 import Safron from './booking/Safron';
+import Dashboard from './dashboard/Dashboard';
 import Home from './landingPage/home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Uploa from './dashboard/Upload';
 
 function App() {
   return (
@@ -23,6 +25,10 @@ function App() {
         <Route path="/aveon/:hotelName" element={<Aveon />}/> 
         <Route path="/gallani/:hotelName" element={<Gallani />}/> 
         <Route path="/debras/:hotelName" element={<Debras />}/> 
+        <Route path="/dashboard" element={<Dashboard/>}/> 
+        <Route path="/upload" element={<Uploa/>}/> 
+
+
 
 
 
