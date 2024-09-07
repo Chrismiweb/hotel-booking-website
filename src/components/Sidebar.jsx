@@ -3,6 +3,7 @@ import { CgMenuLeft } from "react-icons/cg";
 import { MdOutlineCloudUpload } from "react-icons/md";
 import { IoMdArrowDropright } from "react-icons/io";
 import profile from '../images/man3.jpg'
+import { Link } from 'react-router-dom';
 
 function Sidebar() {
   return (
@@ -20,16 +21,20 @@ function Sidebar() {
                 <p className='text-[15px] text-slate-500'>chrismibiteso@gmail.com</p>
             </div>
             <div className='w-[100%] flex flex-col'>
-                <div className='w-[100%] cursor-pointer bg-white hover:bg-slate-200 py-[10px] flex justify-around items-center'>
+               <Link to='/allHotels'>
+               <div className='w-[100%] cursor-pointer bg-white hover:bg-slate-200 py-[10px] flex justify-around items-center'>
                     <MdOutlineCloudUpload className='text-[20px] font-bold'/>
-                    <p className='text-[20px] font-semibold'>Upload</p>
+                    <p className='text-[20px] font-semibold'>All Hotels</p>
                     <IoMdArrowDropright className='text-[20px] font-bold' />
                 </div>
-                <div className='w-[100%] cursor-pointer bg-white hover:bg-slate-200 py-[10px] flex justify-around items-center'>
+               </Link>
+               <Link to='/upload'>
+               <div className='w-[100%] cursor-pointer bg-white hover:bg-slate-200 py-[10px] flex justify-around items-center'>
                     <MdOutlineCloudUpload className='text-[20px] font-bold'/>
-                    <p className='text-[20px] font-semibold'>Upload</p>
+                    <p className='text-[20px] font-semibold'>Upload Hotel</p>
                     <IoMdArrowDropright className='text-[20px] font-bold' />
                 </div>
+               </Link>
                 <div className='w-[100%] cursor-pointer bg-white hover:bg-slate-200 py-[10px] flex justify-around items-center'>
                     <MdOutlineCloudUpload className='text-[20px] font-bold'/>
                     <p className='text-[20px] font-semibold'>Upload</p>

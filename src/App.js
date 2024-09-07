@@ -9,7 +9,9 @@ import Safron from './booking/Safron';
 import Dashboard from './dashboard/Dashboard';
 import Home from './landingPage/home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Uploa from './dashboard/Upload';
+import Uploa from './dashboard/uploadHotel/Upload';
+import AllHotels from './dashboard/allHotels/AllHotels';
+import UploadDashboard from './dashboard/uploadHotel/UploadDashboard';
 
 function App() {
   return (
@@ -26,10 +28,9 @@ function App() {
         <Route path="/gallani/:hotelName" element={<Gallani />}/> 
         <Route path="/debras/:hotelName" element={<Debras />}/> 
         <Route path="/dashboard" element={<Dashboard/>}/> 
-        <Route path="/upload" element={<Uploa/>}/> 
+        <Route path="/upload" element={<UploadDashboard/>}/> 
 
-
-
+        <Route path="/allHotels" element={<AllHotels/>}/> 
 
 
 
