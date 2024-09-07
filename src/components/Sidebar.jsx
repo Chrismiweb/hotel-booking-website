@@ -9,7 +9,7 @@ function Sidebar() {
   return (
     <div className='w-[20%] flex flex-col gap-[20px] h-[100vh] bg-white'>
         <div className ='flex w-[100%] bg-black py-[15px] justify-around items-center'>
-            <p className='text-white text-[25px]'>CHRISMILUXE</p>
+            <Link to="/"><p className='text-white cursor-pointer text-[25px]'>CHRISMILUXE</p></Link>
             <CgMenuLeft className='text-white cursor-pointer text-[25px]'/>
         </div>
         <div className ='flex w-[100%] flex-col px-[20px] bg-white py-[15px] justify-around items-center'>

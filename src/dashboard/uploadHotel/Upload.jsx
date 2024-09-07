@@ -11,9 +11,7 @@ function Uploa() {
     const [addHotel, setAddHotel] = useState([])
 
     async function uploadHotel(){
-      if(!image || !price || !address || hotelName){
-          return toast.error("Please fill all input before uploading")
-      }
+      
         // e.preventDefault()
         // setImage(URL.createObjectURL(e.target.value[0]))
        try {
@@ -44,6 +42,9 @@ function Uploa() {
 
     function handleAddHotel(e){
       e.preventDefault()
+      if(!image || !price || !address || hotelName){
+        return toast.error("Please fill all input before uploading")
+    }
       uploadHotel()
       const newHotel = {
         image: imagePreview, 
@@ -79,9 +80,9 @@ function Uploa() {
               <input className='w-[100%] py-[8px] px-[20px]' onChange={(e)=>setPrice(e.target.value)}   placeholder='E.g $500 Per night' type="number" />
             </div>
            
-            <div className='w-[100%] gap-1  flex flex-col justify-start items-start'>
+            <div className='w-[100%] gap-1 flex flex-col justify-start items-start'>
               <p className='text-[15px] font-semibold'>Upload Image</p>
-              <input  onChange={handleImagePreview} placeholder='image' type="file" />
+              <input onChange={handleImagePreview} placeholder='image' type="file" />
             </div>
 
             {
