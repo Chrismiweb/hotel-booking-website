@@ -12,6 +12,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Uploa from './dashboard/uploadHotel/Upload';
 import AllHotels from './dashboard/allHotels/AllHotels';
 import UploadDashboard from './dashboard/uploadHotel/UploadDashboard';
+import Test from './dashboard/uploadHotel/Test';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
         <Route path="/debras/:hotelName" element={<Debras />}/> 
         <Route path="/dashboard" element={<Dashboard/>}/> 
         <Route path="/upload" element={<UploadDashboard/>}/> 
+        <Route path="/test" element={<Test/>}/> 
+
 
         <Route path="/allHotels" element={<AllHotels/>}/> 
 
