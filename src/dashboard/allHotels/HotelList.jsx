@@ -34,7 +34,7 @@ function HotelList() {
             
             if (responseDelete.ok) {
                 console.log("Hotel was deleted successfully");
-                // Update the hotel list after deletion
+                // Update the hotel list after deletion that is when you delete, the hotels doesnt display again
                 setHotelList(hotelList.filter(hotel => hotel.hotelName !== hotelName));
                 toast.warning("Hotel was deleted successfully")
 
@@ -43,6 +43,7 @@ function HotelList() {
             }
         } catch (error) {
             console.error("Error occurred while deleting the hotel:", error);
+            toast.error("unable to delete hotel, please check internet connection")
         }
     }
 
@@ -52,6 +53,7 @@ function HotelList() {
             <div className='w-[100%] text-start pt-[20px]'>
                 <h1 className='text-[40px] text-blue-700 font-semibold'>All Uploaded Hotels</h1>
             </div>
+            {/* if there is hotel, it shows all hotel but if there is no hotel it shows "no hotel have been uploaded " */}
             {hotelList.length > 0 ? (
                 <div className='w-[100%] grid grid-cols-3 gap-[20px]'>
                     {hotelList.map((a, index) => (

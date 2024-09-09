@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Button } from "antd";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { redirect } from "react-router-dom";
 function Uploa() {
     const [image, setImage] = useState()
     const [hotelName, setHotelName] = useState("")
@@ -33,8 +34,12 @@ function Uploa() {
             })
               const result = await response.json()
               if (response.ok) {
+                 // redirect to all hotel page
+                window.location.href ="/allHotels";
                 console.log(result);
                 toast.success("Hotel uploaded successfully");
+               
+
             } else {
                 toast.error(result.message || "Failed to upload hotel");
             }
@@ -101,18 +106,6 @@ function Uploa() {
             }
             <Button type="primary" className='bg-blue-700 text-white' onClick={uploadHotel} ghost>UPLOAD</Button>
         </form>
-        {/* <div>
-            {addHotel.map((n, index)=>(
-            <div key={index}>
-              <img src={n.image} alt="" />
-            <p>{n.hotelName}</p>
-            <p>{n.price}</p>
-            <p>{n.address}</p>
-
-
-            </div>
-        ))}
-        </div> */}
     </div>
   )
 }
