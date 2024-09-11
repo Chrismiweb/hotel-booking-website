@@ -9,14 +9,15 @@ import Safron from './booking/Safron';
 import Dashboard from './dashboard/Dashboard';
 import Home from './landingPage/home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Uploa from './dashboard/uploadHotel/Upload';
+// import Uploa from './dashboard/uploadHotel/Upload';
 import AllHotels from './dashboard/allHotels/AllHotels';
 import UploadDashboard from './dashboard/uploadHotel/UploadDashboard';
 import Test from './dashboard/uploadHotel/Test';
+// import { ThemeContext } from '@emotion/react';
+import { ThemeContext } from './context/ThemeContext';
 
 function App() {
   return (
-    <div className="App">
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}/> 
@@ -31,18 +32,10 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>}/> 
         <Route path="/upload" element={<UploadDashboard/>}/> 
         <Route path="/test" element={<Test/>}/> 
-
-
         <Route path="/allHotels" element={<AllHotels/>}/> 
-
-
-
-
-
       </Routes>
     </BrowserRouter>
 
-    </div>
   );
 }
 

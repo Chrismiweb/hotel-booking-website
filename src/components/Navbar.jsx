@@ -1,7 +1,15 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import { ThemeContext } from '../context/ThemeContext'
 // import { Link } from 'react-router-dom'
 
 function Navbar() {
+  const {setThemeColor} = useContext(ThemeContext)
+  function changeColor(){
+     setThemeColor({
+      titleColor: 'red',
+      paragraphColor: "blue"
+     })
+  }
   return (
     <div className='w-[100%] bg-black flex items-center py-[10px] justify-between px-[50px] pr-[100px]'>
       <p className='text-white text-[30px]'>CHRISMILUXE</p>
@@ -13,6 +21,7 @@ function Navbar() {
 
       </div>
       <button className='bg-blue-800 py-[7px] border-2 border-blue-700 hover:bg-white hover:text-blue-700 rounded-[20px] px-[30px] text-white font-bold text-[15px]'>About</button>
+      <button onClick={changeColor}>change color</button>
     </div>
   )
 }
