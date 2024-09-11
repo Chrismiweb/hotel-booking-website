@@ -2,17 +2,20 @@ import React, { useState } from 'react'
 import { Button } from "antd";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { redirect } from "react-router-dom";
 function Uploa() {
     const [image, setImage] = useState()
     const [hotelName, setHotelName] = useState("")
     const [imagePreview, setImagePreview] = useState("")
     const [price, setPrice] = useState("")
     const [address, setAddres] = useState("")
+    const [uploading, setUploading] = useState(false)
     // const [addHotel, setAddHotel] = useState([])
 
     async function uploadHotel(e){
-      
+      if(!image || !price || !address || !hotelName){
+            return toast.error("Please fill all input before uploading")
+      }
+        setUploading(true)
         e.preventDefault()
         // setImage(URL.createObjectURL(e.target.value[0]))
         
@@ -38,6 +41,7 @@ function Uploa() {
                 window.location.href ="/allHotels";
                 console.log(result);
                 toast.success("Hotel uploaded successfully");
+                setUploading(false)
                
 
             } else {
@@ -104,7 +108,7 @@ function Uploa() {
                 imagePreview &&
                 <img className='w-[20%] h-[200px]' src={imagePreview} alt="" />
             }
-            <Button type="primary" className='bg-blue-700 text-white' onClick={uploadHotel} ghost>UPLOAD</Button>
+            <Button type="primary" className='bg-blue-700 text-white' onClick={uploadHotel} ghost>{uploading ? "Uploading" : "Upload"}</Button>
         </form>
     </div>
   )
