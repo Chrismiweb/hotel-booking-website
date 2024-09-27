@@ -26,7 +26,7 @@ function HotelList() {
 
     useEffect(() => {
         UploadedHotel();
-    }, []);
+    }, [name, price, address]);
 
     // Delete a hotel by name
     async function deleteHotel(hotelName) {

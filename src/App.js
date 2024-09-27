@@ -13,8 +13,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AllHotels from './dashboard/allHotels/AllHotels';
 import UploadDashboard from './dashboard/uploadHotel/UploadDashboard';
 import Test from './dashboard/uploadHotel/Test';
+import Register from './register/Register';
+import Login from './login/Login';
 // import { ThemeContext } from '@emotion/react';
-import { ThemeContext } from './context/ThemeContext';
+// import { ThemeContext } from './context/ThemeContext';
 
 function App() {
   return (
@@ -33,6 +35,10 @@ function App() {
         <Route path="/upload" element={<UploadDashboard/>}/> 
         <Route path="/test" element={<Test/>}/> 
         <Route path="/allHotels" element={<AllHotels/>}/> 
+        <Route path="/register" element={<Register/>}/> 
+        <Route path="/login" element={<Login/>}/> 
+
+
       </Routes>
     </BrowserRouter>
 
