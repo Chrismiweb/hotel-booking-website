@@ -65,7 +65,7 @@ function Register() {
                     </div>
                     <div className='flex flex-col gap-[10px]'>
                         <p className='text-[14px] font-semibold'>Password</p>
-                        <Input
+                        <Input.Password
                             name='password'
                             value={password}
                             onChange={(e)=>setPassword(e.target.value)}
