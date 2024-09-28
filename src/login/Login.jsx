@@ -6,6 +6,7 @@ import { UserOutlined } from '@ant-design/icons';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { Input, Button } from 'antd';
 function Login() {
+    
   return (
     <div className='w-[100%] h-[100vh] flex justify-center items-center bg-blue-700'>
         <form action="" className='w-[40%] py-[50px] flex justify-center items-center flex-col bg-slate-50 rounded-lg'>
