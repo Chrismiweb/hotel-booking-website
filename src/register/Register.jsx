@@ -43,7 +43,8 @@ function Register() {
 
   return (
     <div className='w-[100%] h-[100vh] flex justify-center items-center bg-blue-700'>
-        <form action="" className='w-[40%] py-[50px] flex justify-center items-center flex-col bg-slate-50 rounded-lg'>
+        <form action="" className='w-[90%] md:w-[50%] lg:w-[40%] py-[50px] flex justify-center items-center flex-col bg-slate-50 rounded-lg'>
+        {/* <form action="" className='w-[40%] py-[50px] flex justify-center items-center flex-col bg-slate-50 rounded-lg'> */}
            <div className='w-[80%] gap-[20px] flex justify-center items-center flex-col'>
                 <h1 className='text-[25px] font-bold'>REGISTER/SIGN UP</h1>
                 <div className='w-[100%] flex flex-col gap-[20px]'>

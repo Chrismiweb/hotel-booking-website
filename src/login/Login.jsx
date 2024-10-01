@@ -2,7 +2,9 @@ import {React, useState} from 'react'
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { FaLock } from "react-icons/fa";
 import { MdOutlineAlternateEmail } from "react-icons/md";
-import { UserOutlined } from '@ant-design/icons';
+import { ToastContainer, toast } from 'react-toastify';
+
+// import { UserOutlined } from '@ant-design/icons';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { Input, Button } from 'antd';
 function Login() {
@@ -13,7 +15,7 @@ function Login() {
     async function loginApi(e){
         e.preventDefault()
         if(!email || !password){
-            return alert("please input all credentials")
+            return toast.warn("Please fill all credentials to login")
         }
         setIsLoading(true)
         const baseUrl = 'http://localhost:1000/login'
@@ -29,11 +31,16 @@ function Login() {
             .then((res)=>res.json())
             if(response){
                 setIsLoading(false)
-                alert(response)
-                console.log(response)
+                // alert(response)
+                toast.success("login successfully")
+                console.log(response.checkUser.userName)
+                localStorage.setItem("token", response.token)
+                window.location.href = "/"
             }
         } catch (error) {
             console.log(error);
+            setIsLoading(false)
+            toast.error("incorrect password")
             
         }
 
@@ -41,9 +48,10 @@ function Login() {
 
   return (
     <div className='w-[100%] h-[100vh] flex justify-center items-center bg-blue-700'>
-        <form action="" className='w-[40%] py-[50px] flex justify-center items-center flex-col bg-slate-50 rounded-lg'>
+        <ToastContainer/>
+        <form action="" className='w-[90%] md:w-[50%] lg:w-[40%] py-[50px] flex justify-center items-center flex-col bg-slate-50 rounded-lg'>
            <div className='w-[80%] gap-[20px] flex justify-center items-center flex-col'>
-                <h1 className='text-[25px] font-bold'>REGISTER/SIGN UP</h1>
+                <h1 className='text-[25px] font-bold'>LOGIN/SIGN IN</h1>
                 <div className='w-[100%] flex flex-col gap-[20px]'>
                    
                     <div className='flex flex-col gap-[10px]'>

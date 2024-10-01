@@ -17,9 +17,10 @@ import Register from './register/Register';
 import Login from './login/Login';
 // import { ThemeContext } from '@emotion/react';
 // import { ThemeContext } from './context/ThemeContext';
-
+import { UserInfoProvider } from './context/userContext';
 function App() {
   return (
+    <UserInfoProvider>
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}/> 
@@ -41,7 +42,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
-
+    </UserInfoProvider>
   );
 }
 
