@@ -1,11 +1,11 @@
-// import { createContext, react, useEffect, useState } from "react"
+// import { createContext, useEffect, useState } from "react"
 
 // export const UserContext = createContext()
 
 // export function UserInfoProvider({children}){
 //     const [userInfo, setUserInfo] = useState(()=>{
 //         const user = localStorage.getItem("token")
-//         return user ? JSON.parse(userInfo) : null
+//         return user ? JSON.parse(userInfo) : null 
 //     })
 
 //     useEffect(()=>{
@@ -23,6 +23,9 @@
 //         </UserContext.Provider>
 //     )
 // }
+
+
+
 
 import { createContext, useEffect, useState } from "react";
 
