@@ -28,7 +28,7 @@ function Navbar() {
         <a href='/'><p className='cursor-pointer font-bold text-[15px]'>Home</p></a>
         <a href="/booking"><p className='cursor-pointer font-bold text-[15px]'>Booking</p></a>
         <p className='cursor-pointer font-bold text-[15px]'>Contact</p>
-        <a href="/allHotels"><p className='cursor-pointer font-bold text-[15px]'>Dashboard</p></a>
+        {/* <a href="/allHotels"><p className='cursor-pointer font-bold text-[15px]'>Dashboard</p></a> */}
       </div>
       
       {/* Conditionally display username or login button */}
