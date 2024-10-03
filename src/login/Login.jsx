@@ -30,7 +30,7 @@ function Login() {
 
             const data = await response.json(); // Parsing the response to JSON
             
-            if (response.ok) { // Checking if the login is successful
+            if (response) { // Checking if the login is successful
                 setIsLoading(false);
                 toast.success(data.message);
                 
@@ -98,3 +98,38 @@ function Login() {
 }
 
 export default Login;
+
+
+// import React, { useState } from 'react'
+
+// function Login() {
+
+//     const [email, setEmail] = useState("")
+//     const [password, setPassword] = useState("")
+
+//     const handleSubmit =async(e)=>{
+//         e.preventDefault()
+//         const response = await fetch('http://localhost:1000/login', {
+//             method: 'POST',
+//             headers: {
+//             'Content-type': 'application/json',
+//             },
+//             body: JSON.stringify({ email, password }),
+//         })
+//         .then(res=>res.json())
+//         if(response){
+//             console.log(response)
+//         }
+//     }
+
+
+//   return (
+//     <div>
+//         <input type="text" onChange={(e)=>setEmail(e.target.value)} name="email" id="" placeholder='email'/>
+//         <input type="text"  onChange={(e)=>setPassword(e.target.value)} name="password" id="" placeholder='password'/>
+//         <button onClick={handleSubmit}>submit</button>
+//     </div>
+//   )
+// }
+
+// export default Login
