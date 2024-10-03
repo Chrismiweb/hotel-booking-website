@@ -50,11 +50,18 @@ function Navbar() {
                 </div>
             </div>
           ) : (
-            <Link to = '/login'>
-              <button className='bg-blue-800 py-[7px] border-2 border-blue-700 hover:bg-white hover:text-blue-700 rounded-[20px] px-[30px] text-white font-bold text-[15px]'>
+            <div className='flex gap-[10px] justify-center items-center'>
+              <Link to = '/login'>
+              <button className='bg-blue-800 py-[5px] border-2 border-blue-700 hover:bg-white hover:text-blue-700 rounded-[20px] px-[30px] text-white font-bold text-[15px]'>
                 Login
               </button>
             </Link>
+            <Link to = '/register'>
+              <button className='bg-blue-800 py-[5px] border-2 border-blue-700 hover:bg-white hover:text-blue-700 rounded-[20px] px-[30px] text-white font-bold text-[15px]'>
+                Register
+              </button>
+            </Link>
+            </div>
           )
         }
       </div>

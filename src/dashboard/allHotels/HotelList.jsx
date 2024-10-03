@@ -14,8 +14,13 @@ function HotelList() {
     // Fetch all hotels
     async function UploadedHotel() {
         try {
-            const baseUrl = 'https://hotel-booking-backend-g6je.onrender.com/api/v1/get-All-Hotel';
-            const response = await fetch(baseUrl);
+            const token = localStorage.getItem("token")
+            const baseUrl = 'http://localhost:1000/api/v1/get-All-Hotel';
+            const response = await fetch(baseUrl, {
+                headers: {
+                    Authorization : "Bearer " + token
+                }
+            });
             const result = await response.json();
             const allHotel = result.getAllHotel;
             setHotelList(allHotel);
@@ -30,7 +35,7 @@ function HotelList() {
 
     // Delete a hotel by name
     async function deleteHotel(hotelName) {
-        const deleteUrl = `https://hotel-booking-backend-g6je.onrender.com/api/v1/delete-one-hotel/${hotelName}`;
+        const deleteUrl = `http://localhost:1000/api/v1/delete-one-hotel/${hotelName}`;
         try {
             const responseDelete = await fetch(deleteUrl, {
                 method: "DELETE"
@@ -53,7 +58,7 @@ function HotelList() {
     // Edit a hotel (PATCH http request)
     async function editHotel(hotelName) {
         // const editUrl = `https://hotel-booking-backend-g6je.onrender.com/api/v1/update-hotel/${hotelName}`;
-        const editUrl = `https://hotel-booking-backend-g6je.onrender.com/api/v1/update-hotel/${hotelName}`;
+        const editUrl = `http://localhost:1000/api/v1/update-hotel/${hotelName}`;
 
         try {
             const responseEdit = await fetch(editUrl, {

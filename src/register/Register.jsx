@@ -31,6 +31,7 @@ function Register() {
             const data = await response.json()
             if (response) {
                 message.success("Registration successful");
+                window.location.href = '/login'
                 console.log(data);
             } else {
                 message.error(data.error || "Registration failed");

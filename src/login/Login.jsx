@@ -2,7 +2,9 @@ import React, { useState, useContext } from 'react';
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { ToastContainer, toast } from 'react-toastify';
-import { Input, Button } from 'antd';
+import { Input, Button, Spin, message } from 'antd';
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
+import { FaLock } from "react-icons/fa";
 import { UserContext } from '../context/userContext'; // Import the context
 
 function Login() {
@@ -15,7 +17,7 @@ function Login() {
     async function loginApi(e) {
         e.preventDefault();
         if (!email || !password) {
-            return toast.warn("Please fill all credentials to login");
+            return message.error("Please fill all credentials to login");
         }
         setIsLoading(true);
         const baseUrl = 'http://localhost:1000/login';
@@ -32,15 +34,15 @@ function Login() {
             
             if (response) { // Checking if the login is successful
                 setIsLoading(false);
-                toast.success(data.message);
+                message.success(data.message);
                 
                 // Store the token and set user info in context
                 localStorage.setItem("token", data.token); // Storing token
                 setUserInfo({ userName: data.checkUser.userName }); // Setting the username in context
 
-                window.location.href = "/"; // Redirect to home page
+                window.location.href = "/allHotels"; // Redirect to home page
             } else {
-                toast.error(data.error);
+                message.error(data.error);
             }
         } catch (error) {
             console.log(error);
@@ -70,17 +72,20 @@ function Login() {
                         </div>
                         <div className='flex flex-col gap-[10px]'>
                             <p className='text-[14px] font-semibold'>Password</p>
-                            <input
+                            <Input.Password
                                 name='password'
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                size='large'
-                                placeholder="input password"
+                                size="large"
+                                placeholder="Input password"
+                                prefix={<FaLock />}
+                                iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+
                             />
                         </div>
                     </div>
                     <Button onClick={loginApi} className='w-[100%] bg-blue-700 text-white'>
-                        {isLoading ? "Logging in..." : "Log In"}
+                        {isLoading ? <Spin/>: "Log In"}
                     </Button>
 
                     <div className='w-[100%] flex flex-col justify-center gap-[10px] items-center'>

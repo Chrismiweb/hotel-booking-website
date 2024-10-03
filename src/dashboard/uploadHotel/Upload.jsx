@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button } from "antd";
+import { Button, Spin } from "antd";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 function Uploa() {
@@ -27,10 +27,14 @@ function Uploa() {
         formData.append('address', address);
 
        try {
-        const baseUrl = "https://hotel-booking-backend-g6je.onrender.com/api/v1/create-hotel"
+        const token = localStorage.getItem("token")
+        const baseUrl = "http://localhost:1000/api/v1/create-hotel"
         const response = await fetch(baseUrl,{
             method: "POST",
             body: formData,
+            headers: {
+              Authorization : "Bearer " + token
+            }
               // headers: {
               //   "Content-type": "application/json",
               // }
@@ -108,7 +112,7 @@ function Uploa() {
                 imagePreview &&
                 <img className='w-[20%] h-[200px]' src={imagePreview} alt="" />
             }
-            <Button type="primary" className='bg-blue-700 text-white' onClick={uploadHotel} ghost>{uploading ? "Uploading" : "Upload"}</Button>
+            <Button type="primary" className='bg-blue-700 text-white' onClick={uploadHotel} ghost>{uploading ? <Spin/> : "Upload"}</Button>
         </form>
     </div>
   )
