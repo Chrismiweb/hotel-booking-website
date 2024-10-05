@@ -47,7 +47,7 @@ function Login() {
         } catch (error) {
             console.log(error);
             setIsLoading(false);
-            toast.error("Unable to login, please check your internet connection");
+            message.error("Unable to login, please check your internet connection");
         }
     }
 
