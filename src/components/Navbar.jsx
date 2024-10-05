@@ -38,7 +38,9 @@ function Navbar() {
           <p className='cursor-pointer font-bold text-[15px]'>Contact</p>
           {
             userInfo ? (
-          <p className='cursor-pointer font-bold text-[15px]'>Dashboard</p>
+              <Link to = '/allHotels'>
+                  <p className='cursor-pointer font-bold text-[15px]'>Dashboard</p>
+              </Link>
 
             ) : null
           }

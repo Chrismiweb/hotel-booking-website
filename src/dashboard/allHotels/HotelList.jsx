@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 // import { MdDelete } from "react-icons/md";
 import { toast, ToastContainer } from 'react-toastify';
 import { Link } from 'react-router-dom';
+import { CiMenuKebab } from "react-icons/ci";
 
 function HotelList() {
     const [hotelList, setHotelList] = useState([]);
@@ -10,6 +11,12 @@ function HotelList() {
     const [address, setAddress] = useState(""); // State for hotel address
     const [edit, setEdit] = useState(false);  // Edit mode flag
     const [currentHotel, setCurrentHotel] = useState(null); // Currently selected hotel for editing
+    const [dropdown, setDropdown] = useState(null)
+
+    // edit and delete drop down
+    function handleDropdown(index){
+        setDropdown(dropdown === index ? null : index)
+    }
 
     // Fetch all hotels
     async function UploadedHotel() {
@@ -101,37 +108,12 @@ function HotelList() {
     }
 
     return (
-        <div className='w-[80%] bg-slate-100 px-[50px] flex flex-col'>
+        <div className='w-[80%] bg-slate-300 px-[50px] flex flex-col'>
             <ToastContainer />
             <div className='w-[100%] text-start pt-[20px]'>
                 <h1 className='text-[40px] text-blue-700 font-semibold'>All Uploaded Hotels</h1>
             </div>
-            {/* If there are hotels, display them. If not, show "No hotels have been uploaded" */}
-            {hotelList.length > 0 ? (
-                <div className='w-[100%] grid grid-cols-3 gap-[20px]'>
-                    {hotelList.map((a, index) => (
-                        <div className='bg-blue-400 p-4' key={index}>
-                            {a.image && <img src={a.image} alt={a.hotelName} />}
-                            <p>{a.hotelName}</p>
-                            <p>{a.address}</p>
-                            <p>${a.price}</p>
-                            <div className='flex justify-between items-center'>
-                                <button onClick={() => handleEdit(a)}>Edit</button>
-                                <button onClick={() => deleteHotel(a.hotelName)}>Delete</button>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            ) : (
-                <div className='w-[100%] py-[100px] justify-center items-center flex flex-col gap-[20px]'>
-                    <p className='text-black font-bold text-[18px]'>No hotels have been uploaded</p>
-                    <Link to='/upload'>
-                        <button className='bg-blue-700 text-white font-bold py-[10px] px-[20px]'>Upload Hotel Now</button>
-                    </Link>
-                </div>
-            )}
-
-            <div>
+            <div className='mb-[30px]'>
                 {edit && (
                     <form onSubmit={async (e) => {
                         e.preventDefault();
@@ -175,6 +157,45 @@ function HotelList() {
                     </form>
                 )}
             </div>
+            {/* if there is an hotel or not */}
+            {hotelList && hotelList.length > 0 ? (
+                <div className='w-[100%] grid grid-cols-3 gap-[20px]'>
+                    {hotelList.map((a, index) => (
+                        <div className='bg-slate-100 p-[10px] rounded-lg flex flex-col gap-[10px] w-[95%]' key={index}>
+                            <div className='w-[100%] h-[250px] overflow-hidden  '>
+                                
+                               
+                                {a.image && <img src={a.image} className='h-full w-full object-fill' alt={a.hotelName} />}
+                            </div>
+                            <div className='flex gap-[5px] flex-col'>
+                                <p className='bg-green-600 py-[10px] w-[100px] rounded-[10px] text-white font-bold text-[11px] flex justify-center items-center'>AVAILABLE</p>
+                                <p>{a.hotelName}</p>
+                                <p className='text-[15px] text-red-500'>Address: {a.address}</p>
+                                <p>${a.price}</p>
+                            </div>
+                            <div className='w-[100%] gap-2 flex bottom-[300px] flex-col justify-end items-end relative'>
+                                <button onClick={()=>handleDropdown(index)} className='w-[40px] h-[40px] flex justify-center border-[2px] border-white items-center rounded-full text-white bg-black'><CiMenuKebab /></button>
+                                {
+                                    dropdown === index && 
+                                <div className='flex flex-col rounded-[20px] w-[100px] gap-[10px] py-[10px] bg-black border-[2px] border-white justify-between items-center'>
+                                    <button className='text-white font-bold text-[13px] hover:text-blue-700' onClick={() => handleEdit(a)}>Edit</button>
+                                    <button className='text-white font-bold text-[13px] hover:text-blue-700' onClick={() => deleteHotel(a.hotelName)}>Delete</button>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <div className='w-[100%] py-[100px] justify-center items-center flex flex-col gap-[20px]'>
+                    <p className='text-black font-bold text-[18px]'>No hotels have been uploaded</p>
+                    <Link to='/upload'>
+                        <button className='bg-blue-700 text-white font-bold py-[10px] px-[20px]'>Upload Hotel Now</button>
+                    </Link>
+                </div>
+            )}
+
+            
         </div>
     );
 }
