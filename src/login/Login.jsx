@@ -1,11 +1,12 @@
 import React, { useState, useContext } from 'react';
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { MdOutlineAlternateEmail } from "react-icons/md";
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
 import { Input, Button, Spin, message } from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { FaLock } from "react-icons/fa";
 import { UserContext } from '../context/userContext'; // Import the context
+import { Link } from 'react-router-dom';
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -52,8 +53,16 @@ function Login() {
     }
 
     return (
-        <div className='w-[100%] h-[100vh] flex justify-center items-center bg-blue-700'>
-            <ToastContainer />
+        <div className='w-[100%] h-[100vh] gap-[50px] flex flex-col justify-center items-center bg-blue-600'>
+            {/* <ToastContainer /> */}
+            <div className='w-[100%] flex justify-between px-[80px] items-center'>
+                <Link to = '/'>
+                    <p className='text-white cursor-pointer text-[30px]'>CHRISMILUXE</p>
+                </Link>
+                <Link to = '/register'>
+                    <button className='border border-white px-[20px] rounded-md py-[10px] font-bold hover:text-blue-600 hover:bg-white duration-300 ease-in text-white'>Sign Up</button>
+                </Link>
+            </div>
             <form action="" className='w-[90%] md:w-[50%] lg:w-[40%] py-[50px] flex justify-center items-center flex-col bg-slate-50 rounded-lg'>
                 <div className='w-[80%] gap-[20px] flex justify-center items-center flex-col'>
                     <h1 className='text-[25px] font-bold'>LOGIN/SIGN IN</h1>
@@ -88,14 +97,14 @@ function Login() {
                         {isLoading ? <Spin/>: "Log In"}
                     </Button>
 
-                    <div className='w-[100%] flex flex-col justify-center gap-[10px] items-center'>
+                    {/* <div className='w-[100%] flex flex-col justify-center gap-[10px] items-center'>
                         <p>Sign In with Google</p>
                         <div className='w-[50%] justify-center items-center flex gap-[20px]'>
                             <AiFillGoogleCircle className='text-[30px]' />
                             <AiFillGoogleCircle className='text-[30px]' />
                             <AiFillGoogleCircle className='text-[30px]' />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </form>
         </div>

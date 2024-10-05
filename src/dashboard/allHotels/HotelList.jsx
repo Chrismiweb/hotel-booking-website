@@ -25,7 +25,7 @@ function HotelList() {
             const allHotel = result.getAllHotel;
             setHotelList(allHotel);
         } catch (error) {
-            console.error("Error fetching hotels:", error);
+            console.log("Error fetching hotels:", error);
         }
     }
 
@@ -47,10 +47,10 @@ function HotelList() {
                 setHotelList(hotelList.filter(hotel => hotel.hotelName !== hotelName));
                 toast.warning("Hotel was deleted successfully");
             } else {
-                console.error("Failed to delete hotel");
+                console.log("Failed to delete hotel");
             }
         } catch (error) {
-            console.error("Error occurred while deleting the hotel:", error);
+            console.log("Error occurred while deleting the hotel:", error);
             toast.error("Unable to delete hotel, please check internet connection");
         }
     }
@@ -82,11 +82,11 @@ function HotelList() {
                 UploadedHotel();
                 setEdit(false); // Close the edit form after successful edit
             } else {
-                console.error("Failed to update hotel");
+                console.log("Failed to update hotel");
                 toast.error("Failed to update hotel");
             }
         } catch (error) {
-            console.error("Error occurred while updating the hotel:", error);
+            console.log("Error occurred while updating the hotel:", error);
             toast.error("Failed to update hotel");
         }
     }

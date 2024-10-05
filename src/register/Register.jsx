@@ -5,6 +5,7 @@ import { MdOutlineAlternateEmail } from "react-icons/md";
 import { UserOutlined } from '@ant-design/icons';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { Input, Button, Spin, message } from 'antd';
+import {Link} from 'react-router-dom'
 
 function Register() {
     const [userName, setUsername] = useState("");
@@ -45,8 +46,16 @@ function Register() {
     }
 
     return (
-        <div className='w-[100%] h-[100vh] flex justify-center items-center bg-blue-700'>
-            <form onSubmit={registerApi} className='w-[90%] md:w-[50%] lg:w-[40%] py-[20px] flex justify-center items-center flex-col bg-slate-50 rounded-lg'>
+        <div className='w-[100%] h-[100%] py-[50px] flex flex-col gap-[50px] justify-center items-center bg-blue-600'>
+             <div className='w-[100%] flex justify-between px-[80px] items-center'>
+                <Link to = '/'>
+                    <p className='text-white cursor-pointer text-[30px]'>CHRISMILUXE</p>
+                </Link>
+                <Link to = '/login'>
+                    <button className='border border-white px-[20px] rounded-md py-[10px] font-bold hover:text-blue-600 hover:bg-white duration-300 ease-in text-white'>Log In</button>
+                </Link>
+            </div>
+            <form onSubmit={registerApi} className='w-[90%] md:w-[50%] lg:w-[40%] py-[50px] flex justify-center items-center flex-col bg-slate-50 rounded-lg'>
                 <div className='w-[80%] gap-[20px] flex justify-center items-center flex-col'>
                     <h1 className='text-[25px] font-bold'>REGISTER/SIGN UP</h1>
                     <div className='w-[100%] flex flex-col gap-[20px]'>
@@ -95,14 +104,14 @@ function Register() {
                         {isLoading ? <Spin /> : "Sign Up"}
                     </Button>
                     
-                    <div className='w-[100%] flex flex-col justify-center gap-[10px] items-center'>
+                    {/* <div className='w-[100%] flex flex-col justify-center gap-[10px] items-center'>
                         <p>Sign Up with Google</p>
                         <div className='w-[50%] justify-center items-center flex gap-[20px]'>
                             <AiFillGoogleCircle className='text-[30px]' />
                             <AiFillGoogleCircle className='text-[30px]' />
                             <AiFillGoogleCircle className='text-[30px]' />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </form>
         </div>
