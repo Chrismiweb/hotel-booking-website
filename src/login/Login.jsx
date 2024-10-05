@@ -53,11 +53,11 @@ function Login() {
     }
 
     return (
-        <div className='w-[100%] h-[100vh] gap-[50px] flex flex-col justify-center items-center bg-blue-600'>
+        <div className='w-[100%] md:h-[100vh]  pb-[300px] md:pb-0 gap-[50px] flex flex-col justify-center items-center bg-blue-600'>
             {/* <ToastContainer /> */}
-            <div className='w-[100%] flex justify-between px-[80px] items-center'>
+            <div className='w-[100%] mt-[50px] md:mt-[10px] flex justify-between px-[20px] md:px-[80px] items-center'>
                 <Link to = '/'>
-                    <p className='text-white cursor-pointer text-[30px]'>CHRISMILUXE</p>
+                    <p className='text-white cursor-pointer text-[20px] md:text-[30px]'>CHRISMILUXE</p>
                 </Link>
                 <Link to = '/register'>
                     <button className='border border-white px-[20px] rounded-md py-[10px] font-bold hover:text-blue-600 hover:bg-white duration-300 ease-in text-white'>Sign Up</button>
