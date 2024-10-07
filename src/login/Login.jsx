@@ -60,7 +60,7 @@ function Login() {
                     <p className='text-white cursor-pointer text-[20px] md:text-[30px]'>CHRISMILUXE</p>
                 </Link>
                 <Link to = '/register'>
-                    <button className='border border-white px-[20px] rounded-md py-[10px] font-bold hover:text-blue-600 hover:bg-white duration-300 ease-in text-white'>Sign Up</button>
+                    <button className='border border-white px-[20px] rounded-md py-[10px] font-bold hover:text-blue-600 hover:bg-white duration-300 ease-in text-white'>Register</button>
                 </Link>
             </div>
             <form action="" className='w-[90%] md:w-[50%] lg:w-[40%] py-[50px] flex justify-center items-center flex-col bg-slate-50 rounded-lg'>

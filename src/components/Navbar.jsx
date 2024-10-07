@@ -83,8 +83,8 @@ function Navbar() {
       </div>
       {
         dropMenu && 
-        // <div className={`fixed z-10 h-full top-0 right-0 w-full max-w-[300px] bg-black py-[30px] gap-[10px] flex flex-col pt-[50px] items-center ease-in-out transition-all duration-700 ${dropMenu ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className={`fixed z-10 h-full top-0 right-0 w-full max-w-[300px] bg-black py-[30px] gap-[10px] flex flex-col pt-[50px] items-center transition-all duration-1000 ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] ${dropMenu ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className={`fixed z-10 h-full top-0 right-0 w-full max-w-[300px] bg-black py-[30px] gap-[10px] flex flex-col pt-[50px] items-center ease-in-out transition-all duration-700 ${dropMenu ? 'translate-x-0' : 'translate-x-full'}`}>
+        {/* // <div className={`fixed z-10 h-full top-0 right-0 w-full max-w-[300px] bg-black py-[30px] gap-[10px] flex flex-col pt-[50px] items-center transition-all duration-1000 ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] ${dropMenu ? 'translate-x-0' : 'translate-x-full'}`}> */}
 
           <div className='w-[100%] px-[30px] text-[30px]'>
             <button onClick={handleClose} className='text-white'><IoClose/></button>
@@ -97,8 +97,9 @@ function Navbar() {
             <p className='cursor-pointer font-bold text-[20px]'>Contact</p>
             {
               userInfo ? (
+            <Link to = '/allHotels'>
             <p className='cursor-pointer font-bold text-[20px]'>Dashboard</p>
-
+            </Link>
               ) : null
             }
           </div>

@@ -16,7 +16,7 @@ function AvailableHotels() {
    }
     
   return (
-    <div>
+    <div className='w-[100%] flex flex-col'>
       <div className='w-[100%] bg-slate-100 justify-center py-[60px] flex-col items-center flex'>
         <div>
             <input type="text" 
@@ -25,7 +25,7 @@ function AvailableHotels() {
             />
             <button onClick={searchBtn}>search</button>
         </div>
-        <div className='grid grid-cols-3 w-[80%] gap-[30px]'>
+        <div className='md:grid flex flex-col w-[90%] md:grid-cols-2 lg:grid-cols-3 md:w-[90%] lg:w-[80%] gap-[30px]'>
             {filterSearch.map((h, index)=>(
                 <div className='w-[100%] shadow-lg shadow-gray-400 rounded-[5px] bg-slate-100' key={index}>
                     <div className='w-[100%] bg-blue-700 overflow-hidden h-[200px]'>
