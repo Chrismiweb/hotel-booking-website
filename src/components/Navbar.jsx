@@ -4,6 +4,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../context/userContext'; // Import the context
 import { Link } from 'react-router-dom';
 import { CgProfile } from "react-icons/cg";
+import { IoClose } from "react-icons/io5";
 import { CgMenuLeft } from "react-icons/cg";
 
 
@@ -27,11 +28,14 @@ function Navbar() {
   function handleDropMenu(){
     setDropMenu(!dropMenu)
   }
+  function handleClose(){
+     setDropMenu(false)
+  }
   return (
     <div className='w-[100%] flex justify-center items-center flex-col'>
       <div className='w-[100%] bg-black flex items-center py-[20px] justify-around lg:justify-between lg:px-[50px] '>
         <p className='text-white text-[30px]'>CHRISMILUXE</p>
-        <button onClick={handleDropMenu} className='text-white text-[30px] flex lg:hidden'>{dropMenu ? "X" : <CgMenuLeft/> }</button>
+        <button onClick={handleDropMenu} className='text-white text-[30px] flex lg:hidden'><CgMenuLeft/></button>
         <div className='text-white hidden lg:flex gap-[20px]'>
           <a href='/'><p className='cursor-pointer font-bold text-[15px]'>Home</p></a>
           <a href="/booking"><p className='cursor-pointer font-bold text-[15px]'>Booking</p></a>
@@ -74,10 +78,19 @@ function Navbar() {
             )
           }
         </div>
+
+        {/* mobile view navigation bar */}
       </div>
       {
         dropMenu && 
-        <div className='bg-black py-[30px] gap-[10px] w-[100%] flex flex-col justify-center items-center'>
+        // <div className={`fixed z-10 h-full top-0 right-0 w-full max-w-[300px] bg-black py-[30px] gap-[10px] flex flex-col pt-[50px] items-center ease-in-out transition-all duration-700 ${dropMenu ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className={`fixed z-10 h-full top-0 right-0 w-full max-w-[300px] bg-black py-[30px] gap-[10px] flex flex-col pt-[50px] items-center transition-all duration-1000 ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] ${dropMenu ? 'translate-x-0' : 'translate-x-full'}`}>
+
+          <div className='w-[100%] px-[30px] text-[30px]'>
+            <button onClick={handleClose} className='text-white'><IoClose/></button>
+
+          </div>
+          {/* <div className='bg-black py-[30px] gap-[10px] w-[100%] flex flex-col justify-center items-center'> */}
           <div className='text-white flex justify-center items-center flex-col lg:hidden gap-[20px]'>
             <a href='/'><p className='cursor-pointer font-bold text-[20px]'>Home</p></a>
             <a href="/booking"><p className='cursor-pointer font-bold text-[20px]'>Booking</p></a>
@@ -121,6 +134,7 @@ function Navbar() {
         </div>
 
       }
+      
     </div>
   );
 }

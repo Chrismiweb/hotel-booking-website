@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { CiMenuKebab } from "react-icons/ci";
+import { Button } from 'antd';
 
 function HotelList() {
     const [hotelList, setHotelList] = useState([]);
@@ -169,20 +170,21 @@ function HotelList() {
                             </div>
                             <div className='flex gap-[5px] flex-col'>
                                 <p className='bg-green-600 py-[10px] w-[100px] rounded-[10px] text-white font-bold text-[11px] flex justify-center items-center'>AVAILABLE</p>
-                                <p>{a.hotelName}</p>
-                                <p className='text-[15px] text-red-500'>Address: {a.address}</p>
-                                <p>${a.price}</p>
+                                <p className='text-[16px] text-blue-600'><b>Hotel Name</b>: {a.hotelName}</p>
+                                <p className='text-[15px] text-red-500'><b>Address</b>: {a.address}</p>
+                                <p><b>Price</b>: ${a.price}</p>
                             </div>
-                            <div className='w-[100%] gap-2 flex bottom-[300px] flex-col justify-end items-end relative'>
+                            {/* <div className='w-[100%] gap-2 flex  flex-col justify-end items-end relative'>
                                 <button onClick={()=>handleDropdown(index)} className='w-[40px] h-[40px] flex justify-center border-[2px] border-white items-center rounded-full text-white bg-black'><CiMenuKebab /></button>
                                 {
-                                    dropdown === index && 
-                                <div className='flex flex-col rounded-[20px] w-[100px] gap-[10px] py-[10px] bg-black border-[2px] border-white justify-between items-center'>
-                                    <button className='text-white font-bold text-[13px] hover:text-blue-700' onClick={() => handleEdit(a)}>Edit</button>
-                                    <button className='text-white font-bold text-[13px] hover:text-blue-700' onClick={() => deleteHotel(a.hotelName)}>Delete</button>
+                                    dropdown === index &&  */}
+                                <div className='flex rounded-[20px] w-[100%] py-[10px] justify-between items-center'>
+                                    <Button type="primary" ghost className='' onClick={() => handleEdit(a)}>Edit</Button>
+                                    <Button type="primary" ghost className='bg-red-600' onClick={() => deleteHotel(a.hotelName)}>Delete</Button>
+                                    
                                 </div>
-                                }
-                            </div>
+                                {/* }
+                            </div> */}
                         </div>
                     ))}
                 </div>
