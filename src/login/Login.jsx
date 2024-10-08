@@ -39,9 +39,12 @@ function Login() {
                 
                 // Store the token and set user info in context
                 localStorage.setItem("token", data.token); // Storing token
-                setUserInfo({ userName: data.checkUser.userName }); // Setting the username in context
+                setUserInfo({ 
+                    userName: data.checkUser.userName, 
+                    email: data.checkUser.email
+                 }); 
 
-                window.location.href = "/allHotels"; // Redirect to home page
+                window.location.href = "/allHotels";
             } else {
                 message.error(data.error);
             }

@@ -84,7 +84,7 @@ function Uploa() {
         setImagePreview(URL.createObjectURL(file))
     }
   return (
-    <div className='w-[80%] bg-slate-100 pr-[150px] pl-[50px] flex flex-col'>
+    <div className='w-[80%] bg-slate-100 pr-[150px] h-[100vh] pl-[50px] flex flex-col'>
       <ToastContainer/>
       <div className='w-[100%] text-start pt-[20px]'>
         <h1 className='text-[40px] text-blue-700 font-semibold'>Hotel Information</h1>

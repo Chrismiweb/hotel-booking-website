@@ -34,14 +34,20 @@ export const UserContext = createContext();
 export function UserInfoProvider({ children }) {
     const [userInfo, setUserInfo] = useState(() => {
         const username = localStorage.getItem("username");
-        return username ? { userName: username } : null;
+        const email = localStorage.getItem("email");
+
+        return username && email ? { userName: username, email: email } : null;
     });
 
     useEffect(() => {
         if (userInfo) {
             localStorage.setItem("username", userInfo.userName); // Save username in localStorage
+            localStorage.setItem("email", userInfo.email); // Save username in localStorage
+
         } else {
             localStorage.removeItem("username");
+            localStorage.removeItem("email");
+
         }
     }, [userInfo]);
 

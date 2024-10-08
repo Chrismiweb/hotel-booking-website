@@ -18,6 +18,7 @@ import Login from './login/Login';
 // import { ThemeContext } from '@emotion/react';
 // import { ThemeContext } from './context/ThemeContext';
 import { UserInfoProvider } from './context/userContext';
+import Contact from './contactUs/Contact';
 function App() {
   return (
     <UserInfoProvider>
@@ -25,6 +26,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}/> 
         <Route path="/booking" element={<Booking />}/> 
+        <Route path="/contact" element={<Contact />}/> 
+
         {/* <Route path="/presken" element={<Presken />}/>  */}
         <Route path="/presken/:hotelName" element={<Presken />}/> 
         <Route path="/safron/:hotelName" element={<Safron />}/> 

@@ -39,9 +39,8 @@ function Navbar() {
         <div className='text-white hidden lg:flex gap-[20px]'>
           <a href='/'><p className='cursor-pointer font-bold text-[15px]'>Home</p></a>
           <a href="/booking"><p className='cursor-pointer font-bold text-[15px]'>Booking</p></a>
-          <p className='cursor-pointer font-bold text-[15px]'>Contact</p>
-          {
-            userInfo ? (
+          <a href="/contact"><p className='cursor-pointer font-bold text-[15px]'>Contact</p></a>
+           { userInfo ? (
               <Link to = '/allHotels'>
                   <p className='cursor-pointer font-bold text-[15px]'>Dashboard</p>
               </Link>
@@ -94,7 +93,8 @@ function Navbar() {
           <div className='text-white flex justify-center items-center flex-col lg:hidden gap-[20px]'>
             <a href='/'><p className='cursor-pointer font-bold text-[20px]'>Home</p></a>
             <a href="/booking"><p className='cursor-pointer font-bold text-[20px]'>Booking</p></a>
-            <p className='cursor-pointer font-bold text-[20px]'>Contact</p>
+            <a href="/contact"><p className='cursor-pointer font-bold text-[20px]'>Contact</p></a>
+          
             {
               userInfo ? (
             <Link to = '/allHotels'>
