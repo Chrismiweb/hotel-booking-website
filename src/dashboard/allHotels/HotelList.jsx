@@ -4,6 +4,9 @@ import { toast, ToastContainer } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { CiMenuKebab } from "react-icons/ci";
 import { Button } from 'antd';
+import DashDropdown from '../../components/dashDropdown';
+import Sidebar from '../../components/Sidebar';
+
 
 function HotelList() {
     const [hotelList, setHotelList] = useState([]);
@@ -109,8 +112,12 @@ function HotelList() {
     }
 
     return (
-        <div className='w-[80%] bg-slate-300 px-[50px] flex flex-col'>
+        <div className='bg-slate-100 flex w-full'>
+            <Sidebar/>
+            <div className='lg:w-[80%] w-[100%] bg-slate-300 px-[20px] flex flex-col'>
             <ToastContainer />
+            {/* side bar btn */}
+            
             <div className='w-[100%] text-start pt-[20px]'>
                 <h1 className='text-[40px] text-blue-700 font-semibold'>All Uploaded Hotels</h1>
             </div>
@@ -160,7 +167,7 @@ function HotelList() {
             </div>
             {/* if there is an hotel or not */}
             {hotelList && hotelList.length > 0 ? (
-                <div className='w-[100%] grid grid-cols-3 gap-[20px]'>
+                <div className='w-[100%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px]'>
                     {hotelList.map((a, index) => (
                         <div className='bg-slate-100 p-[10px] rounded-lg flex flex-col gap-[10px] w-[95%]' key={index}>
                             <div className='w-[100%] h-[250px] overflow-hidden  '>
@@ -189,7 +196,7 @@ function HotelList() {
                     ))}
                 </div>
             ) : (
-                <div className='w-[100%] py-[100px] justify-center items-center flex flex-col gap-[20px]'>
+                <div className='w-[100%] md:h-[90vh] h-[80vh] justify-center items-center flex flex-col gap-[20px]'>
                     <p className='text-black font-bold text-[18px]'>No hotels have been uploaded</p>
                     <Link to='/upload'>
                         <button className='bg-blue-700 text-white font-bold py-[10px] px-[20px]'>Upload Hotel Now</button>
@@ -198,6 +205,7 @@ function HotelList() {
             )}
 
             
+        </div>
         </div>
     );
 }

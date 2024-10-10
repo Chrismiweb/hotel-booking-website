@@ -19,6 +19,7 @@ import Login from './login/Login';
 // import { ThemeContext } from './context/ThemeContext';
 import { UserInfoProvider } from './context/userContext';
 import Contact from './contactUs/Contact';
+import HotelList from './dashboard/allHotels/HotelList';
 function App() {
   return (
     <UserInfoProvider>
@@ -36,6 +37,8 @@ function App() {
         <Route path="/gallani/:hotelName" element={<Gallani />}/> 
         <Route path="/debras/:hotelName" element={<Debras />}/> 
         <Route path="/dashboard" element={<Dashboard/>}/> 
+        <Route path="/hotel/list" element={<HotelList/>}/> 
+
         <Route path="/upload" element={<UploadDashboard/>}/> 
         <Route path="/test" element={<Test/>}/> 
         <Route path="/allHotels" element={<AllHotels/>}/> 
