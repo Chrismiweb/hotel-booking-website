@@ -16,6 +16,7 @@ function HotelList() {
     const [edit, setEdit] = useState(false);  // Edit mode flag
     const [currentHotel, setCurrentHotel] = useState(null); // Currently selected hotel for editing
     const [dropdown, setDropdown] = useState(null)
+    const token = localStorage.getItem("token")
 
     // edit and delete drop down
     function handleDropdown(index){
@@ -49,7 +50,10 @@ function HotelList() {
         const deleteUrl = `http://localhost:1000/api/v1/delete-one-hotel/${hotelName}`;
         try {
             const responseDelete = await fetch(deleteUrl, {
-                method: "DELETE"
+                method: "DELETE",
+                headers: {
+                    Authorization: "Bearer " + token  
+                }
             });
 
             if (responseDelete.ok) {
@@ -75,7 +79,8 @@ function HotelList() {
             const responseEdit = await fetch(editUrl, {
                 method: "PUT",
                 headers: {
-                    "Content-type": "application/json"
+                    "Content-type": "application/json",
+                    Authorization: "Bearer " + token
                 },
                 body: JSON.stringify({
                     hotelName: name,
