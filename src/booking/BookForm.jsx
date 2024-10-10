@@ -42,7 +42,7 @@ function BookForm() {
 
 
   return (
-    <div className='w-[50%] bg-white shadow-2xl mt-[50px] shadow-gray-400 '>
+    <div className='lg:w-[50%] w-[90%] bg-white shadow-2xl mt-[50px] shadow-gray-400 '>
         <form action="" className='flex gap-3 flex-col justify-start items-start py-[40px] px-[40px]'>
             <h1 className='text-black font-bold text-[30px]'>Hotel Booking Form</h1>
             <div className='w-[100%] flex flex-col items-start gap-2'>

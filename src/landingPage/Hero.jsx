@@ -21,7 +21,7 @@ function Hero() {
             <div className='w-[50%] items-start flex flex-col gap-[20px]'>
                 <h1 className='text-white font-bold font-sans text-[40px]'>Book Your Stay Today</h1>
                 <p className='text-white text-start'>Unwind in style with our premium accommodations and exceptional service. Whether you're planning a romantic getaway, a family vacation, or a business trip, CHRISMILUXE offers a range of rooms and suites designed to meet your every need.</p>
-                <button className='bg-blue-800 font-bold text-white w-[100%] py-[10px]'>Book Now</button>
+                  <a href="/booking" className='bg-blue-800 justify-center items-center flex font-bold text-white w-[100%] py-[10px]'>Book Now</a>
             </div>
             <div className='flex flex-col gap-[10px]'>
                 <div className='h-[100px] overflow-hidden w-[150px] border-white border-[2px]'>
