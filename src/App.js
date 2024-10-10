@@ -29,6 +29,7 @@ function App() {
         <Route path="/booking" element={<Booking />}/> 
         <Route path="/contact" element={<Contact />}/> 
 
+
         {/* <Route path="/presken" element={<Presken />}/>  */}
         <Route path="/presken/:hotelName" element={<Presken />}/> 
         <Route path="/safron/:hotelName" element={<Safron />}/> 
@@ -37,7 +38,7 @@ function App() {
         <Route path="/gallani/:hotelName" element={<Gallani />}/> 
         <Route path="/debras/:hotelName" element={<Debras />}/> 
         <Route path="/dashboard" element={<Dashboard/>}/> 
-        <Route path="/hotel/list" element={<HotelList/>}/> 
+        {/* <Route path="/hotel/list" element={<AllHotels/>}/>  */}
 
         <Route path="/upload" element={<UploadDashboard/>}/> 
         <Route path="/test" element={<Test/>}/> 

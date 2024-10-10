@@ -112,13 +112,12 @@ function HotelList() {
     }
 
     return (
-        <div className='bg-slate-100 flex w-full'>
-            <Sidebar/>
+        <div className='bg-slate-100 justify-end flex w-[100%]'>
             <div className='lg:w-[80%] w-[100%] bg-slate-300 px-[20px] flex flex-col'>
             <ToastContainer />
             {/* side bar btn */}
             
-            <div className='w-[100%] text-start pt-[20px]'>
+            <div className='w-[100%] text-start pt-[70px] lg:pt-[20px]'>
                 <h1 className='text-[40px] text-blue-700 font-semibold'>All Uploaded Hotels</h1>
             </div>
             <div className='mb-[30px]'>

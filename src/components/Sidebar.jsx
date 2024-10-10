@@ -128,7 +128,7 @@ function Sidebar() {
             </div>
 
             {/* Sidebar for mobile view (when open) and always visible on desktop */}
-            <div className={`lg:w-[20%] w-[80%] md:w-[50%] ${close ? 'hidden lg:flex' : 'flex'} fixed h-[100vh] bg-white flex-col gap-[20px]`}>
+            <div className={`lg:w-[20%] w-[80%] md:w-[50%] ${close ? 'hidden lg:flex' : 'flex'} fixed h-[100vh] z-50 bg-white flex-col gap-[20px]`}>
                 <div className='flex w-[100%] bg-black py-[15px] justify-around items-center'>
                     <Link to="/">
                         <p className='text-white cursor-pointer text-[25px]'>CHRISMILUXE</p>

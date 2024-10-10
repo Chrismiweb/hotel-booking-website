@@ -5,9 +5,9 @@ import HotelList from './HotelList'
 
 function AllHotels() {
   return (
-    <div className='bg-slate-100 flex'>
-        {/* <Sidebar/> */}
-        {/* <HotelList/> */}
+    <div className='bg-slate-100 '>
+        <Sidebar/> 
+        <HotelList/>
 
     </div>
   )

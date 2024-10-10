@@ -84,37 +84,39 @@ function Uploa() {
         setImagePreview(URL.createObjectURL(file))
     }
   return (
-    <div className='w-[80%] bg-slate-100 pr-[150px] h-[100vh] pl-[50px] flex flex-col'>
-      <ToastContainer/>
-      <div className='w-[100%] text-start pt-[20px]'>
-        <h1 className='text-[40px] text-blue-700 font-semibold'>Hotel Information</h1>
-      </div>
-        <form action="" className='flex gap-[20px] flex-col'>
-            <div className='w-[100%] gap-1  flex flex-col justify-start items-start'>
-              <p className='text-[15px] font-semibold'>Hotel Name</p>
-              <input name='hotelName' value={hotelName} className='w-[100%] py-[8px] px-[20px]' onChange={(e)=>setHotelName(e.target.value)}  placeholder='E.g EKO Hotel' type="text" />
-            </div>
-            <div className='w-[100%] gap-1  flex flex-col justify-start items-start'>
-              <p className='text-[15px] font-semibold'>Hotel Address</p>
-              <input name='address' value={address} className='w-[100%] py-[8px] px-[20px]' onChange={(e)=>setAddres(e.target.value)}   placeholder='E.g Lekki Phase, Lagos Island' type="text" />
-            </div>
-            <div className='w-[100%] gap-1  flex flex-col justify-start items-start'>
-              <p className='text-[15px] font-semibold'>Hotel Price</p>
-              <input name='price' value={price} className='w-[100%] py-[8px] px-[20px]' onChange={(e)=>setPrice(e.target.value)}   placeholder='E.g $500 Per night' type="text" />
-            </div>
-           
-            <div className='w-[100%] gap-1 flex flex-col justify-start items-start'>
-              <p className='text-[15px] font-semibold'>Upload Image</p>
-              <input name='image' alt='image' onChange={handleImagePreview} placeholder='image' type="file" />
-            </div>
+      <div className='bg-slate-100 justify-end flex w-[100%]'>
+      <div className='lg:w-[80%] w-[100%]  bg-slate-100 md:pr-[100px] lg:pr-[150px] h-[100vh] px-[20px] flex flex-col'>
+          <ToastContainer/>
+          <div className='w-[100%] text-start pt-[70px] lg:pt-[20px]'>
+            <h1 className='text-[40px] text-blue-700 font-semibold'>Hotel Information</h1>
+          </div>
+          <form action="" className='flex w-[100%] gap-[20px] flex-col'>
+              <div className='w-[100%] gap-1  flex flex-col justify-start items-start'>
+                <p className='text-[15px] font-semibold'>Hotel Name</p>
+                <input name='hotelName' value={hotelName} className='w-[100%] py-[8px] px-[20px]' onChange={(e)=>setHotelName(e.target.value)}  placeholder='E.g EKO Hotel' type="text" />
+              </div>
+              <div className='w-[100%] gap-1  flex flex-col justify-start items-start'>
+                <p className='text-[15px] font-semibold'>Hotel Address</p>
+                <input name='address' value={address} className='w-[100%] py-[8px] px-[20px]' onChange={(e)=>setAddres(e.target.value)}   placeholder='E.g Lekki Phase, Lagos Island' type="text" />
+              </div>
+              <div className='w-[100%] gap-1  flex flex-col justify-start items-start'>
+                <p className='text-[15px] font-semibold'>Hotel Price</p>
+                <input name='price' value={price} className='w-[100%] py-[8px] px-[20px]' onChange={(e)=>setPrice(e.target.value)}   placeholder='E.g $500 Per night' type="text" />
+              </div>
+            
+              <div className='w-[100%] gap-1 flex flex-col justify-start items-start'>
+                <p className='text-[15px] font-semibold'>Upload Image</p>
+                <input name='image' alt='image' onChange={handleImagePreview} placeholder='image' type="file" />
+              </div>
 
-            {
-                imagePreview &&
-                <img className='w-[20%] h-[200px]' src={imagePreview} alt="" />
-            }
-            <Button type="primary" className='bg-blue-700 text-white' onClick={uploadHotel} ghost>{uploading ? <Spin/> : "Upload"}</Button>
-        </form>
-    </div>
+              {
+                  imagePreview &&
+                  <img className='w-[20%] h-[200px]' src={imagePreview} alt="" />
+              }
+              <Button type="primary" className='bg-blue-700 text-white' onClick={uploadHotel} ghost>{uploading ? <Spin/> : "Upload"}</Button>
+          </form>
+      </div>
+      </div>
   )
 }
 
