@@ -99,6 +99,7 @@ import { CgMenuLeft } from "react-icons/cg"; // Menu icon (Hamburger)
 import profile from '../images/man3.jpg';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../context/userContext';
+import { FaCloudUploadAlt } from "react-icons/fa";
 
 function Sidebar() {
     const { userInfo, setUserInfo } = useContext(UserContext);
@@ -139,8 +140,8 @@ function Sidebar() {
 
                 <div className='flex w-[100%] flex-col px-[20px] bg-white py-[15px] justify-around items-center'>
                     <div className='w-[100%] gap-[5px] justify-start flex flex-col items-start'>
-                        <div className='w-[100px] flex justify-center overflow-hidden items-center h-[100px] rounded-full'>
-                            <img src={profile} alt="" className='object-fill h-[100px] w-[100px] rounded-full' />
+                        <div className='w-[100px] flex justify-center bg-slate-200 overflow-hidden items-center h-[100px] rounded-full'>
+                            <FaCloudUploadAlt className=' text-[25px]'/>
                         </div>
                         {userInfo ? (
                             <div>

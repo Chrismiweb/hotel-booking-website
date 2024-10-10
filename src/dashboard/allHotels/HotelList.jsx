@@ -117,7 +117,7 @@ function HotelList() {
     }
 
     return (
-        <div className='bg-slate-100 justify-end flex w-[100%]'>
+        <div className='bg-slate-300 pb-[30px] justify-end flex w-[100%]'>
             <div className='lg:w-[80%] w-[100%] bg-slate-300 px-[20px] flex flex-col'>
             <ToastContainer />
             {/* side bar btn */}
