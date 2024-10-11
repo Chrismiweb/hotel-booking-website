@@ -16,14 +16,16 @@ function AvailableHotels() {
    }
     
   return (
-    <div className='w-[100%] flex flex-col'>
-      <div className='w-[100%] bg-slate-100 justify-center py-[60px] flex-col items-center flex'>
-        <div>
+    <div className='w-[100%]  flex flex-col'>
+      <div className='w-[100%] bg-slate-100 justify-center py-[60px] gap-[40px] flex-col items-center flex'>
+        <div className='w-[100%] px-[10px] md:px-0 md:w-[50%] gap-[5px] flex justify-center items-center'>
             <input type="text" 
+            className='md:w-[60%] w-[100%] rounded-l-full border-blue-700  text-black px-[30px] h-[35px] border-2'
             onChange={(e)=>setSearch(e.target.value)} 
             value={search}
+            placeholder='Search Location, Hotel Name, and so on...'
             />
-            <button onClick={searchBtn}>search</button>
+            <button className='bg-blue-700 px-[30px] text-white rounded-r-full h-[35px]' onClick={searchBtn}>Search</button>
         </div>
         <div className='md:grid flex flex-col w-[90%] md:grid-cols-2 lg:grid-cols-3 md:w-[90%] lg:w-[80%] gap-[30px]'>
             {filterSearch.map((h, index)=>(
