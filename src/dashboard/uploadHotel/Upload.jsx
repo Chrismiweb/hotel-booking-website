@@ -28,7 +28,7 @@ function Uploa() {
 
        try {
         const token = localStorage.getItem("token")
-        const baseUrl = "http://localhost:1000/api/v1/create-hotel"
+        const baseUrl = "https://chrismiluxe-backend.onrender.com/api/v1/create-hotel"
         const response = await fetch(baseUrl,{
             method: "POST",
             body: formData,
@@ -50,6 +50,7 @@ function Uploa() {
 
             } else {
                 toast.error(result.message || "Failed to upload hotel");
+                setUploading(false)
             }
 
         // .then(res =>res.json())
@@ -84,7 +85,7 @@ function Uploa() {
         setImagePreview(URL.createObjectURL(file))
     }
   return (
-      <div className='bg-slate-100 pb-[30px] justify-end flex w-[100%]'>
+      <div className='bg-slate-100 pb-[80px] justify-end flex w-[100%]'>
       <div className='lg:w-[80%] w-[100%]  bg-slate-100 md:pr-[100px] lg:pr-[150px] h-[100vh] px-[20px] flex flex-col'>
           <ToastContainer/>
           <div className='w-[100%] text-start pt-[70px] lg:pt-[20px]'>

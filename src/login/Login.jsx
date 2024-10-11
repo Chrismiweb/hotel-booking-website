@@ -21,7 +21,7 @@ function Login() {
             return message.error("Please fill all credentials to login");
         }
         setIsLoading(true);
-        const baseUrl = 'http://localhost:1000/login';
+        const baseUrl = 'https://chrismiluxe-backend.onrender.com/login';
         try {
             const response = await fetch(baseUrl, {
                 method: 'POST',
@@ -51,7 +51,7 @@ function Login() {
         } catch (error) {
             console.log(error);
             setIsLoading(false);
-            message.error("Unable to login, please check your internet connection");
+            message.error("Unable to login");
         }
     }
 

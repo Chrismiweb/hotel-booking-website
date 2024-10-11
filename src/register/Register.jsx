@@ -19,7 +19,7 @@ function Register() {
             return message.error("Please input all credentials");
         }
         setIsLoading(true);
-        const baseUrl = 'http://localhost:1000/register'
+        const baseUrl = 'https://chrismiluxe-backend.onrender.com/register'
 
         try {
             const response = await fetch(baseUrl, {

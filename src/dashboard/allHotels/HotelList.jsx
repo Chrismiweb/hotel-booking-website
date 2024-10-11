@@ -27,7 +27,9 @@ function HotelList() {
     async function UploadedHotel() {
         try {
             const token = localStorage.getItem("token")
-            const baseUrl = 'http://localhost:1000/api/v1/get-All-Hotel';
+            console.log("this is d " + token);
+            
+            const baseUrl = 'https://chrismiluxe-backend.onrender.com/api/v1/get-All-Hotel';
             const response = await fetch(baseUrl, {
                 headers: {
                     Authorization : "Bearer " + token
@@ -47,7 +49,7 @@ function HotelList() {
 
     // Delete a hotel by name
     async function deleteHotel(hotelName) {
-        const deleteUrl = `http://localhost:1000/api/v1/delete-one-hotel/${hotelName}`;
+        const deleteUrl = `https://chrismiluxe-backend.onrender.com/${hotelName}`;
         try {
             const responseDelete = await fetch(deleteUrl, {
                 method: "DELETE",
@@ -73,7 +75,7 @@ function HotelList() {
     // Edit a hotel (PATCH http request)
     async function editHotel(hotelName) {
         // const editUrl = `https://hotel-booking-backend-g6je.onrender.com/api/v1/update-hotel/${hotelName}`;
-        const editUrl = `http://localhost:1000/api/v1/update-hotel/${hotelName}`;
+        const editUrl = `https://chrismiluxe-backend.onrender.com/${hotelName}`;
 
         try {
             const responseEdit = await fetch(editUrl, {
