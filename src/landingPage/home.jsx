@@ -5,6 +5,7 @@ import Hero from './Hero'
 import Facility from './facility'
 import Suites from './Suites'
 import TakeTour from './takeTour'
+import Footer from '../footer/Footer'
 
 
 function Home() {
@@ -16,6 +17,7 @@ function Home() {
       <Facility/>
       <Suites/>
       <TakeTour/>
+      <Footer/>
       
     </div>
   )

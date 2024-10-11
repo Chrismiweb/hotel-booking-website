@@ -7,17 +7,17 @@ function Suites() {
     const hotels = [
         {
             img: img1,
-            name: 'Aveon Hotel',
-            price: "₦50,000 Per Night"
+            name: 'Chrismi Hotel',
+            price: "₦80,000 Per Night"
         },
         {
-            img: img1,
+            img: img2,
             name: 'Aveon Hotel',
-            price: "₦50,000 Per Night"
+            price: "₦250,000 Per Night"
         },
         {
-            img: img1,
-            name: 'Aveon Hotel',
+            img: img3,
+            name: 'Sangote Hotel',
             price: "₦50,000 Per Night"
         }
     ]

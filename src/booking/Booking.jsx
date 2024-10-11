@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Hero from './Hero'
 import AvailableHotels from './AvailableHotels'
+import Footer from '../footer/Footer'
 
 function Booking() {
   return (
@@ -9,6 +10,7 @@ function Booking() {
       <Navbar/>
       <Hero/>
       <AvailableHotels/>
+      <Footer/>
       
     </div>
   )
